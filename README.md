@@ -2,6 +2,10 @@
 
 ParaLog is a tool that uses n-gram dictionaries to efficiently parse log files of large size.
 
+## Acknowledgement
+
+This project was inspired by a lab from ECE459 (Programming for Performance), a course offered at the University of Waterloo in 2023. If you find this project interesting, I recommend checking out the [ECE459 course website](https://github.com/jzarnett/ece459) as well.
+
 ## User Guide
 
 Users can run `cargo test` to run the test cases. To invoke the program itself, users can run the following commands.
@@ -19,6 +23,7 @@ cargo run --release -- --raw-healthapp data/HealthApp.log --to-parse "20171223-2
 ```
 
 Users will need to untar `OpenStack.tar.gz` to try this one (but it doesn't work well anyway):
+
 ```
 cargo run --release -- --raw-openstack data/openstack_normal2.log --to-parse "nova-compute.log.2017-05-17_12:02:35 2017-05-17 12:02:30.397 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): in use: on this node 1 local, 0 on other nodes sharing this instance storage"
 ```
