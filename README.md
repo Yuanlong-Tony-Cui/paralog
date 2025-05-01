@@ -1,10 +1,10 @@
 # ParaLog
 
-Most code lives in `<parser.rs>`. A bit of code is in `<main.rs>`.
+ParaLog is a tool that uses n-gram dictionaries to efficiently parse log files of large size.
 
-You can run cargo test to run the test cases.
+## User Guide
 
-Here's how you can invoke the program itself.
+Users can run `cargo test` to run the test cases. To invoke the program itself, users can run the following commands.
 
 ```
 cargo run --release -- --raw-spark data/from_paper.log --to-parse "17/06/09 20:11:11 INFO storage.BlockManager: Found block rdd_42_20 locally" --before "split: hdfs://hostname/2kSOSP.log:29168+7292" --after "Found block" --cutoff 3
@@ -18,7 +18,7 @@ cargo run --release -- --raw-healthapp data/HealthApp_2k.log --to-parse "2017122
 cargo run --release -- --raw-healthapp data/HealthApp.log --to-parse "20171223-22:15:41:672|Step_StandReportReceiver|30002312|REPORT : 7028 5017 150539 240" --before "calculateAltitudeWithCache totalAltitude=240" --after "onStandStepChanged 3601" --cutoff 10
 ```
 
-You'll need to untar `OpenStack.tar.gz` to try this one (but it doesn't work well anyway):
+Users will need to untar `OpenStack.tar.gz` to try this one (but it doesn't work well anyway):
 ```
 cargo run --release -- --raw-openstack data/openstack_normal2.log --to-parse "nova-compute.log.2017-05-17_12:02:35 2017-05-17 12:02:30.397 2931 INFO nova.virt.libvirt.imagecache [req-addc1839-2ed5-4778-b57e-5854eb7b8b09 - - - - -] image 0673dd71-34c5-4fbb-86c4-40623fbe45b4 at (/var/lib/nova/instances/_base/a489c868f0c37da93b76227c91bb03908ac0e742): in use: on this node 1 local, 0 on other nodes sharing this instance storage"
 ```
